@@ -76,7 +76,7 @@ class MyHandler(BaseHTTPRequestHandler):
 						sname 		= i["sname"];
 						icon 		= i["icon"];
 						
-						for quality in range(1,4):
+						for quality in range(3,4):
 							parameters = urllib.urlencode( { 
 								'c' 		: sname, 
 								'i'			: icon, 
