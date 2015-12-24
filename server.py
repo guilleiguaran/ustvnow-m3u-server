@@ -7,11 +7,11 @@ import SocketServer
 import socket
 import SimpleHTTPServer
 import string,cgi,time
-from os import curdir, sep
+from os import curdir, sep, getenv
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 import base64
 
-port = 8787;
+port = int(getenv('PORT', 8787));
 
 class MyHandler(BaseHTTPRequestHandler):
  
