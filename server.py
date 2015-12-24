@@ -54,7 +54,7 @@ class MyHandler(BaseHTTPRequestHandler):
         	
         elif self.path.startswith('/play'):
         
-        	args = parse_qs(base64.b64decode(self.path[5:]));
+        	args = parse_qs(base64.b64decode(self.path[6:]));
         	username = args['u'][0];
         	password = args['p'][0];
         	ustv = ustvnow.Ustvnow(username, password);
@@ -92,7 +92,7 @@ class MyHandler(BaseHTTPRequestHandler):
 								quality_name = 'High';
 						
 							EXTM3U += '#EXTINF:-1, tvg-name="' + name + '" tvg-logo="' + icon + '" group-title="' + quality_name + '", ' + name + '\n';
-							EXTM3U += 'http://' + host + '/play'  + base64.b64encode(parameters) +'\n\n';
+							EXTM3U += 'http://' + host + '/play/'  + base64.b64encode(parameters) +'\n\n';
 						
 						#print 'http://' + host + '/play'  + base64.b64encode(parameters);
 					
