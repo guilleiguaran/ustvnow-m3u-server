@@ -91,7 +91,8 @@ class MyHandler(BaseHTTPRequestHandler):
 							elif quality==3:
 								quality_name = 'High';
 						
-							EXTM3U += '#EXTINF:-1, tvg-name="' + name + '" tvg-logo="' + icon + '" group-title="' + quality_name + '", ' + name + '\n';
+							#EXTM3U += '#EXTINF:-1, tvg-name="' + name + '" tvg-logo="' + icon + '" group-title="' + quality_name + '", ' + name + '\n';
+							EXTM3U += '#EXTINF:-1, ' + name + '\n';
 							EXTM3U += 'http://' + host + '/play/'  + base64.b64encode(parameters) +'\n\n';
 						
 						#print 'http://' + host + '/play'  + base64.b64encode(parameters);
